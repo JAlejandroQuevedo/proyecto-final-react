@@ -11,7 +11,7 @@ export const ProductCart = ({ img, titulo, descripcion, precio }) => {
                 <p>{precio}</p>
                 <button>Detalle</button>
             </div>
-            <ItemCount stock={5} />
+            <ItemCount stock={20} />
 
         </section>
     )

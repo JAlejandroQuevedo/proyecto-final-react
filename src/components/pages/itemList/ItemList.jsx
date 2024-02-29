@@ -10,8 +10,6 @@ export const ItemList = ({ saludar, saludar2 }) => {
                 <ProductCart img={'https://res.cloudinary.com/dge6pbj4l/image/upload/v1709051590/photos%20store/oafoet9gdlceyrdoaezz.webp'} titulo={'Sandalias'} descripcion={'Sandalias'} precio={370} />
                 <ProductCart img={'https://res.cloudinary.com/dge6pbj4l/image/upload/v1709051590/photos%20store/ubuvkzb1v9pxmokybndd.webp'} titulo={'Playera'} descripcion={'Playera'} precio={250} />
             </div>
-            <button onClick={saludar}>1</button>
-            <button onClick={saludar2}>2</button>
         </>
     )
 }
