@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaCartShopping } from "react-icons/fa6";
 import { ItemCount } from './itemCount/ItemCount';
 
 export const NavBar = () => {
@@ -11,8 +12,12 @@ export const NavBar = () => {
                     <li>Deportivas</li>
                     <li>Urbanas</li>
                 </ul>
+                <div className='cartConteiner'>
+                    <FaCartShopping className='cartWidget' />
+                    <span>0</span>
+                </div>
 
-                <ItemCount/>
+
             </div>
         </>
     )

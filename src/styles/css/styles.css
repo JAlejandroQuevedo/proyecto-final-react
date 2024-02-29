@@ -17,13 +17,13 @@
   flex-wrap: wrap;
   gap: 30px;
   justify-content: center;
+  padding: 20px;
 }
 
 .navBar {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  padding: 20px;
   justify-content: space-around;
 }
 .navBar ul {
@@ -34,7 +34,7 @@
   list-style: none;
 }
 .navBar .cartWidget {
-  color: blue;
+  color: black;
   font-size: 30px;
 }
 
@@ -43,6 +43,19 @@
   gap: 0.625rem;
   align-items: center;
   font-size: 20px;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.counter button {
+  height: 30px;
+  width: 50px;
+  background: none;
+  border: 1px solid black;
+  border-radius: 5px;
 }
 
 /*Layout  */

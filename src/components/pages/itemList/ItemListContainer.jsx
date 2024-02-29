@@ -1,15 +1,24 @@
-import React from 'react'
-import { ProductCart } from '../../common/productCart/ProductCart'
+import React, { useEffect, useState } from 'react'
+import { ItemList } from './ItemList'
 
 const ItemListContainer = () => {
+    const [items, setItems] = useState([]);
+    const [nombre, setNombre] = useState(['Pepe'])
+
+    const saludar = () => {
+        setNombre('Maria')
+        console.log(`Hola ${nombre}`)
+    }
+    const saludar2 = () => {
+        setNombre('Pepe')
+        console.log(`Hola ${nombre}`)
+    }
+
+    useEffect(() => { console.log('Se hace la peticion dentro') }, [nombre])
+
     return (
         <>
-            <div className="containerProductCarts">
-                <ProductCart img={'https://res.cloudinary.com/dge6pbj4l/image/upload/v1709051590/photos%20store/mdo5rgnzhsj7cod3cowx.webp'} titulo={'Nike'} descripcion={'Tenis de marca nike'} precio={2500} />
-                <ProductCart img={'https://res.cloudinary.com/dge6pbj4l/image/upload/v1709051590/photos%20store/do89rriezcywqkhwzdwf.webp'} titulo={'Adidas'} descripcion={'Tenis de marca Adidas'} precio={550}/>
-                <ProductCart img={'https://res.cloudinary.com/dge6pbj4l/image/upload/v1709051590/photos%20store/oafoet9gdlceyrdoaezz.webp'} titulo={'Sandalias'} descripcion={'Sandalias'} precio={370} />
-                <ProductCart img={'https://res.cloudinary.com/dge6pbj4l/image/upload/v1709051590/photos%20store/ubuvkzb1v9pxmokybndd.webp'} titulo={'Playera'} descripcion={'Playera'} precio={250} />
-            </div>
+            <ItemList saludar={saludar} saludar2={saludar2} />
         </>
     )
 }

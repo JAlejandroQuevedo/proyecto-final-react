@@ -1,12 +1,12 @@
 import React from 'react';
 import { FaCartShopping } from "react-icons/fa6";
-import { Counter } from '../Counter';
+import { Counter } from '../counter/Counter';
+import { CounterContainer } from '../counter/CounterContainer';
 
-export const ItemCount = () => {
+export const ItemCount = ({ stock }) => {
     return (
-        <div className='cartConteiner'>
-            <Counter/>
-            <FaCartShopping className='cartWidget'/>
-        </div>
+        <>
+            <CounterContainer stock={stock} />
+        </>
     )
 }
