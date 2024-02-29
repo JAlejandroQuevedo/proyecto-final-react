@@ -7,7 +7,19 @@
 @import './base/reset';
 @import './base/typo';
 /*Layout  */
+//NavBar
+@import './layout/navBar';
+//imgProductCard
+@import './layout/imgProductCard';
+//ContainerGeneralCard
+@import './layout/containerGeneralCard';
+//ContainerGeneralCardButton
+@import './components/containerGeneralCard__button';
 /*Components  */
+//Cart container
+@import './components/cartContainer';
+//Counter
+@import './components/counter';
 //Card
 
 /*Media  */

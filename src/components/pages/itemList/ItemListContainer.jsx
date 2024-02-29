@@ -1,24 +1,25 @@
 import React, { useEffect, useState } from 'react'
 import { ItemList } from './ItemList'
+import { products } from '../../../asyncMock';
 
 const ItemListContainer = () => {
-    const [items, setItems] = useState([]);
-    const [nombre, setNombre] = useState(['Pepe'])
+    const [items, setItems] = useState([])
+    useEffect(() => {
+        //Crear o solicitar la promesa
+        const tarea = new Promise((resolve, reject) => {
+            resolve(products)
+            // reject('Error, no existen los datos')
+        })
+        //Manejar la promesa
+        tarea.then((res) => { setItems(res) }).catch((err) => { console.log(err) })
 
-    const saludar = () => {
-        setNombre('Maria')
-        console.log(`Hola ${nombre}`)
-    }
-    const saludar2 = () => {
-        setNombre('Pepe')
-        console.log(`Hola ${nombre}`)
-    }
+    }, [])
 
-    useEffect(() => { console.log('Se hace la peticion dentro') }, [nombre])
+    console.log(items)
 
     return (
         <>
-            <ItemList saludar={saludar} saludar2={saludar2} />
+            <ItemList items={items} />
         </>
     )
 }

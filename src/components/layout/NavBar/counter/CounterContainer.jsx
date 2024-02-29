@@ -12,7 +12,7 @@ export const CounterContainer = ({ stock }) => {
     }
     return (
         <>
-            <Counter counter={counter} sumar={sumar} restar={restar} />
+            <Counter counter={counter} sumar={sumar} restar={restar} stock={stock} />
         </>
     )
 }
