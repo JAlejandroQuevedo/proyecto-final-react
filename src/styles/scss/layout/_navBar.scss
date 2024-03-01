@@ -17,11 +17,23 @@
 
         li {
             list-style: none;
+
+            button {
+                width: 150px;
+                height: 30px;
+                background: none;
+                border: 1px solid black;
+            }
         }
+    }
+
+    a {
+        text-decoration: none;
     }
 
     .cartWidget {
         color: black;
         font-size: 25px;
+
     }
 }

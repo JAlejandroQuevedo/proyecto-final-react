@@ -1,25 +1,32 @@
 import React, { useEffect, useState } from 'react'
 import { ItemList } from './ItemList'
-import { products } from '../../../asyncMock';
+import { getProducts } from '../../../asyncMock';
+import { BounceLoader } from 'react-spinners';
+import { useParams } from 'react-router-dom';
 
 const ItemListContainer = () => {
-    const [items, setItems] = useState([])
+    const { category } = useParams()
+    const [items, setItems] = useState([]);
+    const [isLoading, setIsLoading] = useState(true)
     useEffect(() => {
-        //Crear o solicitar la promesa
-        const tarea = new Promise((resolve, reject) => {
-            resolve(products)
-            // reject('Error, no existen los datos')
+        setIsLoading(true)
+        getProducts().then((resp) => {
+            if (category) {
+                const productsFilter = resp.filter((product) => product.category === category);
+                setItems(productsFilter)
+            } else {
+                setItems(resp);
+            }
+            setIsLoading(false);
         })
-        //Manejar la promesa
-        tarea.then((res) => { setItems(res) }).catch((err) => { console.log(err) })
 
-    }, [])
+    }, [category])
 
     console.log(items)
 
     return (
         <>
-            <ItemList items={items} />
+            {isLoading ? <BounceLoader /> : <ItemList items={items} />}
         </>
     )
 }
