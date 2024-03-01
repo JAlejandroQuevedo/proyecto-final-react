@@ -96,6 +96,13 @@
   border-radius: 5px;
 }
 
+.sppiner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+
 /*Media  */
 
 /*# sourceMappingURL=styles.css.map */
