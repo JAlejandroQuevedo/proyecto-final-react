@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { ItemList } from './ItemList'
 import { getProducts } from '../../../asyncMock';
-import { BounceLoader } from 'react-spinners';
 import { useParams } from 'react-router-dom';
+import { SppinerList } from '../../common/spinner/Sppiner';
 
 const ItemListContainer = () => {
     const { category } = useParams()
@@ -26,7 +26,7 @@ const ItemListContainer = () => {
 
     return (
         <>
-            {isLoading ? <BounceLoader /> : <ItemList items={items} />}
+            {isLoading ? <SppinerList /> : <ItemList items={items} />}
         </>
     )
 }

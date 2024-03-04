@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { getProduct } from '../../../asyncMock';
 import { ItemDetail } from './ItemDetail';
-import { BeatLoader } from 'react-spinners';
+import { SppinerDetail } from '../../common/spinner/Sppiner';
 
 export const ItemDetailContainer = () => {
     const { id } = useParams()
@@ -19,7 +19,7 @@ export const ItemDetailContainer = () => {
 
     return (
         <>
-            {isLoading ? <BeatLoader /> : <ItemDetail {...item} />}
+            {isLoading ? <SppinerDetail /> : <ItemDetail {...item} />}
         </>
     )
 }
