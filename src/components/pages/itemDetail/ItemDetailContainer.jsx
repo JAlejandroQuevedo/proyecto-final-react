@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { getProduct } from '../../../asyncMock';
 import { ItemDetail } from './ItemDetail';
 import { SppinerDetail } from '../../common/spinner/Sppiner';
@@ -8,6 +8,7 @@ export const ItemDetailContainer = () => {
     const { id } = useParams()
     const [item, setItem] = useState(null);
     const [isLoading, setIsLoading] = useState(true)
+    /*     const navigate = useNavigate() */
 
     useEffect(() => {
         setIsLoading(true)
@@ -15,11 +16,22 @@ export const ItemDetailContainer = () => {
             setItem(resp)
             setIsLoading(false)
         })
-    }, [])
+    }, [id]);
+
+    const onAdd = (cantidad) => {
+        let infoProducto = {
+            ...item,
+            quantity: cantidad
+        }
+        console.log(infoProducto);
+        /*         //Quiero navegar al carrito
+                navigate('/cart') */
+
+    }
 
     return (
         <>
-            {isLoading ? <SppinerDetail /> : <ItemDetail {...item} />}
+            {isLoading ? <SppinerDetail /> : <ItemDetail {...item} onAdd={onAdd} />}
         </>
     )
 }

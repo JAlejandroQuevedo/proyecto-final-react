@@ -13,7 +13,6 @@ export const ProductCart = ({ items }) => {
                         <h3>{item.name}</h3>
                         <p>{item.description}</p>
                         <Link to={`/item/${item.id}`}><button>Detalle</button></Link>
-                        <ItemCount stock={item.stock} />
                     </div>)
             })}
 

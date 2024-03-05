@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Counter = ({ sumar, restar, counter, stock }) => {
+export const Counter = ({ sumar, restar, counter, stock, onAdd }) => {
     return (
         <>
             <div className='counter'>
@@ -9,7 +9,7 @@ export const Counter = ({ sumar, restar, counter, stock }) => {
                 <button onClick={restar} disabled={counter === 1 ? true : false}>Restar</button>
             </div>
             <div className='addCart'>
-                <button>Agregar al carrito</button>
+                <button onClick={() => { onAdd(counter) }}>Agregar al carrito</button>
             </div>
 
         </>
