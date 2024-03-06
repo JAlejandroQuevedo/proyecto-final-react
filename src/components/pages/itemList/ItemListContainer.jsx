@@ -22,11 +22,19 @@ const ItemListContainer = () => {
 
     }, [category])
 
-    console.log(items)
+
+    //If con return temprano
+    if (isLoading) {
+        return <SppinerList />
+    }
+    //Se usa cuando se quiere ocultar un componente completo
+
 
     return (
         <>
-            {isLoading ? <SppinerList /> : <ItemList items={items} />}
+            {/* isLoading ? <SppinerList /> : <ItemList items={items} /> */}
+            {/* isLoading && <SppinerList /> ==> Se usa cuando una fraccion se muestre y que si no no se muestre nada */}
+            <ItemList items={items} />
         </>
     )
 }

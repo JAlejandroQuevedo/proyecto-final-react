@@ -1,12 +1,11 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { Cart } from './Cart';
 import { CartContext } from '../../../context/CartContext';
 
 
 export const CartContainer = () => {
-    const { cart, clearCart } = useContext(CartContext);
-    const { removeById } = useContext(CartContext)
+    const { cart, clearCart, removeById, getTotalPrice } = useContext(CartContext);
+    let totalPrice = getTotalPrice()
     return (
         <div>
             {
@@ -17,6 +16,7 @@ export const CartContainer = () => {
                     <button onClick={() => removeById(product.id)}>Eliminar</button>
                 </div>)
             }
+            <h2>El total a pagar es {totalPrice}</h2>
             <Link to='/checkout'>
                 <button>Terminar compra</button>
             </Link>

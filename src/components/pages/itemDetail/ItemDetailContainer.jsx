@@ -9,7 +9,9 @@ export const ItemDetailContainer = () => {
     const { id } = useParams();
     const [item, setItem] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
-    const { addToCart } = useContext(CartContext);
+    const { addToCart, getTotalQuantityById } = useContext(CartContext);
+
+    const total = getTotalQuantityById(+id)
     /*     const navigate = useNavigate() */
     useEffect(() => {
         setIsLoading(true)
@@ -32,7 +34,7 @@ export const ItemDetailContainer = () => {
 
     return (
         <>
-            {isLoading ? <SppinerDetail /> : <ItemDetail {...item} onAdd={onAdd} />}
+            {isLoading ? <SppinerDetail /> : <ItemDetail {...item} onAdd={onAdd} initial={total} />}
         </>
     )
 }
