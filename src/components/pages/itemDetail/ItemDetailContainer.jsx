@@ -4,6 +4,8 @@ import { getProduct } from '../../../asyncMock';
 import { ItemDetail } from './ItemDetail';
 import { SppinerDetail } from '../../common/spinner/Sppiner';
 import { CartContext } from '../../../context/CartContext';
+import { db } from '../../../firebaseConfig';
+import { collection, doc, getDoc } from 'firebase/firestore';
 
 export const ItemDetailContainer = () => {
     const { id } = useParams();
@@ -15,10 +17,11 @@ export const ItemDetailContainer = () => {
     /*     const navigate = useNavigate() */
     useEffect(() => {
         setIsLoading(true)
-        getProduct(+id).then((resp) => {
-            setItem(resp)
-            setIsLoading(false)
-        })
+        let productsColection = collection(db, 'products');
+        let refDoc = doc(productsColection, id);
+        getDoc(refDoc).then(res => {
+            setItem({ ...res.data(), id: res.id })
+        }).finally(() => setIsLoading(false))
     }, [id]);
 
     const onAdd = (cantidad) => {
