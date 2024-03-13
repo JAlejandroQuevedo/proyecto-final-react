@@ -35,15 +35,6 @@ export const CheckoutContainer = () => {
     const capturar = (e) => {
         setUserInfo({ ...userInfo, [e.target.name]: e.target.value })
     }
-    /*     const capturarNombre = (e) => {
-            setUserInfo({ ...userInfo, name: e.target.value })
-    
-        }
-        const capturarApellido = (e) => {
-            setUserInfo({ ...userInfo, lastName: e.target.value })
-    
-    
-        } */
     return (
         <>
             <Checkout envioDeFormulario={envioDeFormulario} capturar={capturar} orderId={orderId} />

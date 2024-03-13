@@ -14,7 +14,6 @@ export const ItemDetailContainer = () => {
     const { addToCart, getTotalQuantityById } = useContext(CartContext);
 
     const total = getTotalQuantityById(+id)
-    /*     const navigate = useNavigate() */
     useEffect(() => {
         setIsLoading(true)
         let productsColection = collection(db, 'products');
@@ -30,9 +29,6 @@ export const ItemDetailContainer = () => {
             quantity: cantidad
         }
         addToCart(infoProducto)
-        /*         //Quiero navegar al carrito
-                navigate('/cart') */
-
     }
 
     return (
