@@ -15,7 +15,6 @@ export const CheckoutContainer = () => {
     let totalPrice = getTotalPrice()
     const envioDeFormulario = (e) => {
         e.preventDefault()
-        //Aca manipulo lo que quiero hacer con los datos del formulario
         let order = {
             buyer: userInfo,
             items: cart,
