@@ -23,6 +23,7 @@
                 height: 30px;
                 background: none;
                 border: 1px solid black;
+                @include hover-focus;
             }
         }
     }
@@ -34,6 +35,10 @@
     .cartWidget {
         color: black;
         font-size: 25px;
+
+        &:focus {
+            border: 2px solid blue;
+        }
 
     }
 }

@@ -7,20 +7,22 @@ export const CartContainer = () => {
     const { cart, clearCart, removeById, getTotalPrice } = useContext(CartContext);
     let totalPrice = getTotalPrice()
     return (
-        <div>
+        <div className='cartContainerDetail'>
             {
-                cart.map((product) => <div key={product.id}>
+                cart.map((product) => <div key={product.id} className='detail'>
                     <h2>Nombre: {product.name}</h2>
                     <p>Precio: {product.price}</p>
                     <p>Cantidad: {product.quantity}</p>
                     <button onClick={() => removeById(product.id)}>Eliminar</button>
                 </div>)
             }
-            <h2>El total a pagar es {totalPrice}</h2>
-            <Link to='/checkout'>
-                <button>Terminar compra</button>
-            </Link>
-            <button onClick={clearCart}>Limpiar carrito</button>
+            <div className="total">
+                <h2>El total a pagar es: ${totalPrice}</h2>
+                <Link to='/checkout'>
+                    <button >Terminar compra</button>
+                </Link>
+                <button onClick={clearCart}>Limpiar carrito</button>
+            </div>
         </div>
     )
 }

@@ -15,20 +15,26 @@ export const CheckoutContainer = () => {
     let totalPrice = getTotalPrice()
     const envioDeFormulario = (e) => {
         e.preventDefault()
-        let order = {
-            buyer: userInfo,
-            items: cart,
-            total: totalPrice
+        if (userInfo.name !== '' && userInfo.phone !== '' && userInfo.email) {
+            let order = {
+                buyer: userInfo,
+                items: cart,
+                total: totalPrice
+            }
+            let ordersCollection = collection(db, 'orders');
+            addDoc(ordersCollection, order).then((res) => {
+                setOrderId(res.id);
+            })
+            cart.forEach((product) => {
+                let refDoc = doc(db, 'products', product.id)
+                updateDoc(refDoc, { stock: product.stock - product.quantity })
+            })
+            clearCart()
+
+        } else {
+            alert('Por favor ingresa todos los datos')
         }
-        let ordersCollection = collection(db, 'orders');
-        addDoc(ordersCollection, order).then((res) => {
-            setOrderId(res.id);
-        })
-        cart.forEach((product) => {
-            let refDoc = doc(db, 'products', product.id)
-            updateDoc(refDoc, { stock: product.stock - product.quantity })
-        })
-        clearCart()
+
 
     }
     const capturar = (e) => {

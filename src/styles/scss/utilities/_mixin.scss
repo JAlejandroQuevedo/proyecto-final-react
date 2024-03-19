@@ -3,3 +3,21 @@
     font-size: $size;
 
 }
+
+@mixin hover-focus() {
+    &:hover {
+        border: 2px solid blue;
+    }
+
+    &:focus {
+        border: 2px solid blue;
+    }
+}
+
+@mixin buttonStyle () {
+    width: 150px;
+    height: 30px;
+    background: none;
+    border: 1px solid black;
+    @include hover-focus;
+}

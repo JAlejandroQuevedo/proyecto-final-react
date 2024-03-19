@@ -15,6 +15,12 @@
 @import './layout/containerGeneralCard';
 //ContainerGeneralCardButton
 @import './components/containerGeneralCard__button';
+//Container count
+@import './layout/containerCount';
+//Card
+@import './layout/cardDetail';
+//Cart conteiner detail
+@import './layout/cartContainer';
 /*Components  */
 //Cart container
 @import './components/cartContainer';
@@ -22,6 +28,7 @@
 @import './components/counter';
 //Sppinner
 @import './components/sppiner';
-//Card
+//FormCheckout
+@import './components/formCheckout';
 
 /*Media  */

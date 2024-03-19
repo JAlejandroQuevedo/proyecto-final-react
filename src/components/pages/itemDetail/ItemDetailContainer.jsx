@@ -12,7 +12,8 @@ export const ItemDetailContainer = () => {
     const [isLoading, setIsLoading] = useState(true);
     const { addToCart, getTotalQuantityById } = useContext(CartContext);
 
-    const total = getTotalQuantityById(+id)
+    const total = getTotalQuantityById(id);
+    console.log(total)
     useEffect(() => {
         setIsLoading(true)
         let productsColection = collection(db, 'products');
