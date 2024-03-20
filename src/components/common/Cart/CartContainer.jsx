@@ -16,13 +16,19 @@ export const CartContainer = () => {
                     <button onClick={() => removeById(product.id)}>Eliminar</button>
                 </div>)
             }
-            <div className="total">
-                <h2>El total a pagar es: ${totalPrice}</h2>
-                <Link to='/checkout'>
-                    <button >Terminar compra</button>
-                </Link>
-                <button onClick={clearCart}>Limpiar carrito</button>
-            </div>
+
+            {totalPrice !== 0
+                ?
+                <div className="total">
+                    <h2>El total a pagar es: ${totalPrice}</h2>
+                    <Link to='/checkout'>
+                        <button >Terminar compra</button>
+                    </Link>
+                    <button onClick={clearCart}>Limpiar carrito</button>
+                </div>
+                :
+                <h3 className='cartEmpty'>Tú carrito se encuentra vacío</h3>
+            }
         </div>
     )
 }

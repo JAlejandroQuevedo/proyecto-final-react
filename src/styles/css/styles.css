@@ -168,12 +168,72 @@
   border: 2px solid blue;
 }
 
+.orderConteiner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+.orderConteiner .order {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 10px;
+  height: 200px;
+  padding: 20px;
+}
+.orderConteiner .order h1 {
+  margin-bottom: 50px;
+  font-weight: lighter;
+}
+.orderConteiner .order h1 span {
+  font-weight: bold;
+  text-decoration: underline;
+}
+.orderConteiner .order .link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: black;
+  width: 150px;
+  height: 30px;
+  background: none;
+  border: 1px solid black;
+  width: 200px;
+  text-decoration: none;
+}
+.orderConteiner .order .link:hover {
+  border: 2px solid blue;
+}
+.orderConteiner .order .link:focus {
+  border: 2px solid blue;
+}
+
 /*Components  */
 .cartConteiner {
   display: flex;
   gap: 0.625rem;
   align-items: center;
   font-size: 20px;
+}
+
+.cartEmpty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  height: 100px;
+  width: 600px;
+  border-radius: 10px;
+}
+.cartEmpty:hover {
+  border: 2px solid blue;
+}
+.cartEmpty:focus {
+  border: 2px solid blue;
 }
 
 .counter, .addCart {
@@ -246,50 +306,6 @@
   border: 2px solid blue;
 }
 .formCheckout button:focus {
-  border: 2px solid blue;
-}
-
-.orderConteiner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50vh;
-}
-.orderConteiner .order {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid black;
-  border-radius: 10px;
-  height: 200px;
-  padding: 20px;
-}
-.orderConteiner .order h1 {
-  margin-bottom: 50px;
-  font-weight: lighter;
-}
-.orderConteiner .order h1 span {
-  font-weight: bold;
-  text-decoration: underline;
-}
-.orderConteiner .order .link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 20px;
-  color: black;
-  width: 150px;
-  height: 30px;
-  background: none;
-  border: 1px solid black;
-  width: 200px;
-  text-decoration: none;
-}
-.orderConteiner .order .link:hover {
-  border: 2px solid blue;
-}
-.orderConteiner .order .link:focus {
   border: 2px solid blue;
 }
 
